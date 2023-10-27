@@ -106,4 +106,44 @@ public class Solution
     }
 }
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
-ANS-3:
+ANS-3:-- 
+Given a 2D integer array matrix, return the transpose of matrix.
+class Solution 
+{
+    public static int[][] transpose(int[][] matrix)
+     {
+         
+     int[][] ans = new int[matrix[0].length][matrix.length];
+
+        for(int i = 0; i<matrix.length;i++)
+        {
+            for(int j =0; j< matrix[i].length; j++ )
+            {
+                ans[j][i] = matrix[i][j];
+            }
+        }
+        return ans;
+    }
+    public static void main(String args[])
+    {
+        int matrix[][]=new int[3][3];
+        int n=matrix.length;
+        int m=matrix[0].length;
+        Scanner sc=new Scanner(System.in);
+    
+        
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                matrix[i][j]=sc.nextInt();
+            }
+        }
+         
+       
+        System.out.println(  transpose( matrix));
+    }
+
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+ANS:4-Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.

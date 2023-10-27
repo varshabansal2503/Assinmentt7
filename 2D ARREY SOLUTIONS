@@ -1,1 +1,109 @@
-
+ANS-1:
+Given a square matrix mat, return the sum of the matrix diagonals.
+import java.util.*;
+class Solution
+ {
+    public static int diagonalSum(int[][] mat)
+     {
+       int sum=0;
+       int n=mat.length;
+        int m=mat[0].length;
+        
+        for(int i=0;i<n;i++)
+        {
+            sum=sum+mat[i][i];
+            if(i!=n-1-i)
+            {
+                sum+=mat[i][n-1-i];
+            }
+            
+            
+        }
+        return sum;
+    }
+    public static void main(String args[])
+    {
+        int mat[][]=new int[3][3];
+        int n=mat.length;
+        int m=mat[0].length;
+        Scanner sc=new Scanner(System.in);
+    
+        
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                mat[i][j]=sc.nextInt();
+            }
+        }
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+              System.out.print(  mat[i][j]+" ");
+            }
+            System.out.println();
+        }
+        System.out.println( diagonalSum(mat));
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+ANS:2-You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise
+import java.util.*;
+public class Solution
+ {
+    public static int diagonalSum(int[][] matrix)
+     {
+        int n=matrix.length;
+        int m=matrix[0].length;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                int temp=matrix[i][j];
+                matrix[i][j]=matrix[j][i];
+                matrix[j][i]=temp;
+            }
+        }
+          int col1 = 0;
+           int col2 = matrix.length-1;
+    while (col1<col2)
+    {
+        for (int i = 0; i < matrix.length; i++) {
+            int temp = matrix[i][col1];
+            matrix[i][col1] = matrix[i][col2];
+            matrix[i][col2] = temp;
+        }
+        col1++;
+        col2--;
+    }
+        
+    }
+    public static void main(String args[])
+    {
+        int matrix[][]=new int[3][3];
+        int n=matrix.length;
+        int m=matrix[0].length;
+        Scanner sc=new Scanner(System.in);
+    
+        
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                matrix[i][j]=sc.nextInt();
+            }
+        }
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+              System.out.print(  matrix[i][j]+" ");
+            }
+            System.out.println();
+        }
+        System.out.println( diagonalSum(matrix));
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+ANS-3:

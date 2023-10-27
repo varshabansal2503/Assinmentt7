@@ -146,6 +146,66 @@ class Solution
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ANS:4--Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's
 
-}
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
-ANS:4-Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.
+ANS:5-You are given two matrices A & B of same size, you have to return another matrix which is the sum of A and B.Note:
+Matrices are of same size means the number of rows and number of columns of both matrices are equal.
+import java.util.*;
+public class Additionmat
+{
+    public static int[][]additon_arr(int mat1[][],int mat2[][])
+    {
+           int mat3[][]=new int[3][3];
+            for(int i=0;i<mat3.length;i++)
+          {
+            for(int j=0;j<mat3[0].length;j++)
+            {
+                mat3[i][j]=(mat1[i][j]+mat2[i][j]);
+            }
+            System.out.println();
+          }
+          return mat3;
+    }
+    public static void print_matrix(int mat3[][])
+    {
+         for (int i = 0; i < mat3.length; i++) {
+            for (int j = 0; j < mat3[0].length; j++)
+                System.out.print(mat3[i][j] + " ");
+ 
+            System.out.println();
+        }
+    }
+    public static void main(String args[])
+    {
+        Scanner sc =new Scanner(System.in);
+        
+        int mat1[][]=new int[3][3];
+         int mat2[][]=new int[3][3];
+          
+            System.out.println("entre elemt");
+          for(int i=0;i<mat1.length;i++)
+          {
+            for(int j=0;j<mat1[0].length;j++)
+            {
+                mat1[i][j]=sc.nextInt();
+               
+            }
+            System.out.println();
+          }
+            System.out.println("entre elemt");
+           for(int i=0;i<mat2.length;i++)
+          {
+            for(int j=0;j<mat2[0].length;j++)
+            {
+                mat2[i][j]=sc.nextInt();
+                
+            }
+            System.out.println();
+          }
+              int mat3[][] = additon_arr( mat1,mat2);
+ 
+            print_matrix(mat3);
+          
+
+    }
+}

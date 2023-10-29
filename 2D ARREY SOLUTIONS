@@ -211,3 +211,33 @@ public class Additionmat
 }
 ANS:6--
 Given a 2D integer array nums, return all elements of nums in diagonal order as shown in the below images.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ANS:7---
+You are given two integer matrices A and B having same size(Both having same number of rows (N) and columns (M).
+You have to subtract matrix B from A and return the resultant matrix. (i.e. return the matrix A - B).
+
+public class Substract
+{
+    public static int[][]substract_arr(int mat1[][],int mat2[][])
+    {
+           int mat3[][]=new int[3][3];
+            for(int i=0;i<mat3.length;i++)
+          {
+            for(int j=0;j<mat3[0].length;j++)
+            {
+                mat3[i][j]=(mat1[i][j]-mat2[i][j]);
+            }
+            System.out.println();
+          }
+          return mat3;
+    }
+    public static void print_matrix(int mat3[][])
+    {
+         for (int i = 0; i < mat3.length; i++) {
+            for (int j = 0; j < mat3[0].length; j++)
+                System.out.print(mat3[i][j] + " ");
+ 
+            System.out.println();
+        }
+    }
+}
